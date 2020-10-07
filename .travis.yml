@@ -4,6 +4,7 @@ os:
   # - osx
 language: python
 python:
+  - "3.9"
   - "3.8"
   - "3.7"
   - "3.6"
@@ -17,6 +18,9 @@ jobs:
       env: TOXENV=pep8
 
     # test setup.py using each tested version
+    - python: 3.9
+      env: TOXENV=setup39
+
     - python: 3.8
       env: TOXENV=setup38
 
