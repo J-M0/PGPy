@@ -5,12 +5,12 @@ os:
 language: python
 python:
   - "3.9-dev"
-  - "3.8"
-  - "3.7"
-  - "3.6"
-  - "3.5"
-  - "pypy"
-  - "pypy3"
+    #  - "3.8"
+    #  - "3.7"
+    #  - "3.6"
+    #  - "3.5"
+    #  - "pypy"
+    #  - "pypy3"
 jobs:
   include:
     # add a pep8 test
@@ -55,7 +55,7 @@ install:
 
 # set TOXENV if it isn't yet
 before_script:
-  - if [[ "${TRAVIS_PYTHON_VERSION}" =~ '(.*)-dev' ]]; then TRAVIS_PYTHON_VERSION="${BASH_REMATCH[@]:1}"; fi
+  - if [[ "${TRAVIS_PYTHON_VERSION}" =~ (.*)-dev ]]; then TRAVIS_PYTHON_VERSION="${BASH_REMATCH[@]:1}"; fi
   - if [[ -z "$TOXENV" ]]; then export TOXENV=py${TRAVIS_PYTHON_VERSION//.}; fi
   - if [[ "${TRAVIS_PYTHON_VERSION}" == 'pypy' ]]; then export TOXENV=pypy; fi
   - if [[ "${TRAVIS_PYTHON_VERSION}" == 'pypy3' ]]; then export TOXENV=pypy3; fi
