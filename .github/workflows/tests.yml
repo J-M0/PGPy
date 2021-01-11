@@ -10,6 +10,7 @@ jobs:
         with:
           python-version: 3.6
       - run: sed -i -e 's/^/#/' tests/gnupghome/gpg-agent.conf
+      - run: unset HOMEBREW_NO_AUTO_UPDATE
       - run: brew config
       - run: brew unlink python@3.9 && brew link --overwrite python@3.9
       - run: brew install -q libffi gnupg2 pgpdump openssl@1.1 gpgme swig
