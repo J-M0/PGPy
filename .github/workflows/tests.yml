@@ -11,7 +11,7 @@ jobs:
           python-version: 3.6
       - run: sed -i -e 's/^/#/' tests/gnupghome/gpg-agent.conf
       - run: brew config
-      - run: brew bundle cleanup
+      - run: brew bundle cleanup -f
       - run: brew unlink python@3.9 && brew link --overwrite python@3.9
       - run: brew bundle install
       - run: brew list --versions $(brew bundle list)
