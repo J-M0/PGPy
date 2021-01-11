@@ -18,3 +18,5 @@ jobs:
 #      - run: pip install tox coveralls
 #      - name: Run Tox
 #        run: ./tox.sh -e py
+    env:
+      HOMEBREW_NO_AUTO_UPDATE:
