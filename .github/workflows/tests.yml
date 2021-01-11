@@ -13,7 +13,7 @@ jobs:
       - run: unset HOMEBREW_NO_AUTO_UPDATE
       - run: brew config
       - run: brew unlink python@3.9 && brew link --overwrite python@3.9
-      - run: brew install -q libffi gnupg2 pgpdump openssl@1.1 gpgme swig
+      - run: brew bundle install
       - run: brew list --versions $(brew bundle list)
 #      - run: pip install tox coveralls
 #      - name: Run Tox
